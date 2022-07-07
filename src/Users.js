@@ -21,7 +21,7 @@ import {
         <TextField source="phone" />
         
         <TextField source="company.name" label="Company" />
-      </Datagrid>
+  </Datagrid>*
     </List>
   );
    
