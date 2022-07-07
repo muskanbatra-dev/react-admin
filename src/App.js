@@ -9,13 +9,19 @@ import {
   UserEdit,
   UserCreate,
 } from './Users';
-import authProvider from "./authProvider";
+
+import {
+  SuperadminList,
+  SuperadminEdit,
+  SuperadminCreate,
+} from './Superadmin';
+
  
 const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
  
 function App() {
   return (
-    <Admin dataProvider={dataProvider} authProvider={authProvider}>
+    <Admin dataProvider={dataProvider} >
       <Resource
         name="users"
         list={UserList}
@@ -23,13 +29,13 @@ function App() {
         create={UserCreate}
       />
     
-<Admin dataProvider={dataProvider}></Admin>
-<Resource
-        name="superadmin"
-        list={UserList}
-        edit={UserEdit}
-        create={UserCreate}
-      />
+
+      <Resource
+              name="superadmin"
+              list={SuperadminList}
+              edit={SuperadminEdit}
+              create={SuperadminCreate}
+            />
     </Admin>
   );
 }
